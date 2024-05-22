@@ -13,7 +13,7 @@ if(!empty($izvodjacID) && !empty($ime) && !empty($zanr) && !empty($opis) && !emp
 
     $statement = $mysqli->prepare("INSERT INTO izvodjac(izvodjacID, ime, zanr, opis, dogadjajID, slika) VALUES (?, ?, ?, ?, ?, ?)");
 
-    $statement->bind_param("sssssi", $izvodjacID, $ime, $zanr, $opis, $dogadjajID, $slika);
+    $statement->bind_param("ssssss", $izvodjacID, $ime, $zanr, $opis, $dogadjajID, $slika);
 
     if($statement->execute()){
         header("Location: ../dodajIzvodjaca.php?success=1");
