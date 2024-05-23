@@ -12,7 +12,7 @@ if(!empty($kartaID) && !empty($dogadjajID) && !empty($cena) && !empty($brojSedis
 
     $statement = $mysqli->prepare("INSERT INTO karta(kartaID, dogadjajID, cena, brojSedista, redSedista) VALUES (?, ?, ?, ?, ?)");
 
-    $statement->bind_param("ssssi", $kartaID, $dogadjajID, $cena, $brojSedista, $redSedista);
+    $statement->bind_param("sssss", $kartaID, $dogadjajID, $cena, $brojSedista, $redSedista);
 
     if($statement->execute()){
         header("Location: ../dodajKarte.php?success=1");

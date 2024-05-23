@@ -12,7 +12,7 @@ $izvodjacID = $_REQUEST['izvodjacID'];
 if(!empty($dogadjajID) && !empty($naziv) && !empty($sala) && !empty($datum) && !empty($opis) && !empty($izvodjacID)){
     $statement = $mysqli->prepare("INSERT INTO dogadjaji(dogadjajID, naziv, sala, datum, opis, izvodjacID) VALUES (?, ?, ?, ?, ?, ?)");
 
-    $statement->bind_param("sssssi", $dogadjajID, $naziv, $sala, $datum, $opis, $izvodjacID);
+    $statement->bind_param("ssssss", $dogadjajID, $naziv, $sala, $datum, $opis, $izvodjacID);
 
     if($statement->execute()){
         header("Location: ../dodajDogadjaj.php?success=1");
